@@ -1,0 +1,25 @@
+#vhost template file
+
+<% if @port == 80 -%>
+	NameVirtualHost *:80
+<% end -%>
+
+<VirtualHost *:<%= @port %>>
+
+	ServerName <%= @domain %>
+	DocumentRoot <%= @document_root %>
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+  <Directory <%= @document_root %> >
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Require all granted
+    Satisfy Any
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
+
