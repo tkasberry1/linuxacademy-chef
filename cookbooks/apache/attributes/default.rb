@@ -2,6 +2,8 @@ default["apache"]["sites"]["tkasberry2"] = { "site_title" => "tkasberry2s websit
 default["apache"]["sites"]["tkasberry2b"] = { "site_title" => "tkasberry2bs website comming soon!", "port" => 80, "domain" => "tkasberry2b.mylabserver.com" }  
 default["apache"]["sites"]["tkasberry5"] = { "site_title" => "tkasberry5s website comming soon", "port" => 80, "domain" => "tkasberry5.mylabserver.com" }
 
+default["author"]["name"] = "terri"
+
 case node["platform"]
 when "centos"
 	default["apache"]["package"] = "httpd"
